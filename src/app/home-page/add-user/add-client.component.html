@@ -1,0 +1,33 @@
+<div *ngIf="showAlert" class="text-center">
+  <span class="label label-warning"> Os campos não foram preenchidos corretamente, ou estão vazios! </span>
+</div>
+
+<form *ngIf="showForm">
+  <div class="text-center border">
+    <h3> Dados do Cliente </h3>
+  </div>
+
+  <div class="form-group">
+    <label for="InputName">Nome</label>
+    <input type="text" class="form-control" id="inputName" placeholder="Nome" name="name" [(ngModel)]="clientName">
+    <p class="help-block"> Nome deve ter no mínimo 6 caracteres </p>
+  </div>
+  <div class="form-group">
+    <label for="InputEmail1">Email address</label>
+    <input type="email" class="form-control" id="InputEmail1" placeholder="Email" name="email" [(ngModel)]="clientEmail">
+    <p class="help-block"> Email deve ter no mínimo 13 caracteres </p>
+  </div>
+  <div class="form-group">
+    <label for="InputCompany">Nome da Empresa</label>
+    <input type="text" class="form-control" id="inputCompany" placeholder="Empresa" name="companyName" [(ngModel)]="clientCompanyName">
+    <p class="help-block"> Nome da Empresa deve ter no mínimo 2 caracteres </p>
+  </div>
+
+  <div class="container">
+    <button (click)="AddNewClient()" type="button" class="btn btn-success btn-lg btn-block">Cadastrar</button>
+  </div>
+</form>
+
+<section *ngIf="showButton">
+  <button (click)="show(this.showForm)" type="button" class="btn btn-primary btn-lg btn-block">Cadastrar Novo Cliente</button>
+</section>

@@ -1,0 +1,26 @@
+<main>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><b> Id </b></th>
+        <th><b> Nome </b></th>
+        <th><b> Email </b></th>
+        <th><b> Empresa </b></th>
+        <th><b> Data de Cadastro </b></th>
+        <th><b> Remover </b></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let client of clientsList">
+      <tr>
+        <td>{{ client.id }}</td>
+        <td>{{ client.name }}</td>
+        <td>{{ client.email }}</td>
+        <td>{{ client.companyName }}</td>
+        <td>{{ client.releaseData | date: 'dd/MM/yyyy' }}</td>
+        <td>
+          <button (click)="deleteById(client.id)" class="btn btn-danger">Remover</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>
